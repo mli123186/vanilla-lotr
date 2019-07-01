@@ -75,11 +75,23 @@ function makeMiddleEarth () {
 // ============
 
 function makeHobbits() {
-  console.log("2: makeHobbits");
+
+  const hobbitsList = document.createElement('ul') ;
+
+  for (let i = 0; i < hobbits.length; i++) {
+    const list = document.createElement('li');
+    list.className = 'hobbit';
+    list.innerText = hobbits[i];
+    hobbitsList.appendChild(list);
+
+  }
+
 
   // display an `unordered list` of hobbits in the shire
+  
 
   // give each hobbit a class of `hobbit`
+  document.querySelector('#The-Shire').appendChild(hobbitsList); 
 
   // hint: create a 'ul' outside the loop into which to append the 'li's
 
@@ -98,10 +110,11 @@ function makeHobbits() {
 function keepItSecretKeepItSafe() { 
   console.log("3: keepItSecretKeepItSafe");
 
+  const div = document.createElement('div');
   // create a div with an id of `'the-ring'`
-
+  div.className = 'magic-imbued-jewelry';
   // give the div a class of `'magic-imbued-jewelry'`
-
+  document.querySelector('.hobbit').appendChild(div);
   // add the ring as a child of `Frodo`
 
 }
@@ -116,8 +129,16 @@ function keepItSecretKeepItSafe() {
 
 function makeBaddies() { 
   console.log("4: makeBaddies");
-
+  const baddiesList = document.createElement('ul');
   // display an unordered list of baddies in Mordor
+  for (let i = 0; i < baddies.length; i++) {
+    const list = document.createElement('li');
+    list.className = 'baddy';
+    list.innerText = baddies[i];
+    baddiesList.appendChild(list);
+  }
+
+  document.querySelector('#Mordor').appendChild(baddiesList);
 
   // give each of the baddies a class of "baddy"
 
@@ -135,7 +156,18 @@ function makeBaddies() {
 
 function makeBuddies () { 
   console.log("5: makeBuddies");
+  const asideBuddies = document.createElement('aside');
+  const buddiesList = document.createElement('ul');
+  
+  for (let i = 0; i < buddies.length; i++) {
+    const list = document.createElement('li');
+    list.className = 'buddy';
+    list.innerText = buddies[i];
+    buddiesList.appendChild(list);
+  }
+  const aside = asideBuddies.appendChild(buddiesList);
 
+  document.querySelector('#Rivendell').appendChild(aside);
   // create an `aside` tag
    
   // put an `unordered list` of the `'buddies'` in the aside
@@ -154,6 +186,9 @@ function makeBuddies () {
 
 function leaveTheShire() { 
   console.log("6: leaveTheShire");
+  // const leaveTheShire = document.createElement('ul');
+  // leaveTheShire.appendChild('#The-Shire');
+  document.querySelector('#Rivendell').appendChild(document.querySelector('ul'));
 
   // assemble the `hobbits` and move them to `rivendell`
 }
@@ -169,6 +204,13 @@ function leaveTheShire() {
 function beautifulStranger() { 
   console.log("7: beautifulStranger");
 
+  //const a = document.querySelector('aside').childNodes;
+  // const changeName = 'Aragorn';
+  // for(let i = 0; i < )
+  const changeName = document.querySelector('#Rivendell li').nextSibling.nextSibling.nextSibling;
+        changeName.innerText = 'Aragorn';
+  //changeName.innerText = 'Aragorn';
+
   // change the `'Strider'` text to `'Aragorn'`
 }
 
@@ -182,6 +224,21 @@ function beautifulStranger() {
 
 function forgeTheFellowShip() { 
   console.log("8: forgeTheFellowShip");
+  const divNew = document.createElement('div');
+  divNew.className = 'the-fellowship';
+  //document.querySelector('#Rivendell').appendChild(divNew);
+
+  for(let i = 0; i < 4; i++) {
+     //alert(`${document.querySelector('.buddy').innerText} has joined you`);
+     divNew.appendChild(document.querySelector('.buddy'));
+     //alert(`${document.querySelector('.hobbit').innerText} has joined you`);
+    divNew.appendChild(document.querySelector('.hobbit'));
+  };
+    //alert(`${document.querySelector('.buddy').innerText} has joined you`);
+
+    divNew.appendChild(document.querySelector('.buddy'));
+  //querySelector()
+    document.querySelector('#Rivendell').appendChild(divNew);
   // create a new div called `'the-fellowship'` within `rivendell`
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
   // after each character is added make an alert that they // have joined your party
@@ -199,6 +256,9 @@ function forgeTheFellowShip() {
 
 function theBalrog() { 
   console.log("9: theBalrog");
+  document.querySelector('.the-fellowship li').innerText = 'Gandalf the White';
+  document.querySelector('.the-fellowship li').style.backgroundColor = "white";
+  document.querySelector('.the-fellowship li').style.border = "4px solid grey"; 
    // change the `'Gandalf'` text to `'Gandalf the White'`
    // apply the following style to the element, make the // background 'white', add a grey border
 }
@@ -213,6 +273,8 @@ function theBalrog() {
 
 function hornOfGondor() { 
   console.log("10: hornOfGondor");
+    //alert("The horn of Gondor has been blown");
+    document.querySelector('.the-fellowship').removeChild(document.querySelector('.the-fellowship').lastChild);
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // Remove `Boromir` from the Fellowship
@@ -228,7 +290,13 @@ function hornOfGondor() {
 
 function itsDangerousToGoAlone() { 
   console.log("11: itsDangerousToGoAlone");
+  document.querySelector('#Mordor').appendChild(document.querySelector('.the-fellowship .hobbit'))
+  document.querySelector('#Mordor').appendChild(document.querySelector('.the-fellowship .hobbit'))
   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+  const divDoom = document.createElement('div');
+  divDoom.id = 'mount-doom';
+  //div.appendChild(document.querySelector)
+  document.querySelector('#Mordor').appendChild(divDoom);
   // add a div with an id of `'mount-doom'` to `Mordor`
 }
 
@@ -243,7 +311,11 @@ function itsDangerousToGoAlone() {
 
 function weWantsIt() { 
   console.log("12: weWantsIt");
-  // Create a div with an id of `'gollum'` and add it to Mordor
+  const divGollum = document.createElement('div');
+  divGollum.id = 'gollum';
+  document.querySelector('#Mordor').appendChild(divGollum);
+  document.querySelector('#gollum').appendChild(document.querySelector('.magic-imbued-jewelry'));
+  //Create a div with an id of `'gollum'` and add it to Mordor
   // Remove `the ring` from `Frodo` and give it to `Gollum`
   // Move Gollum into Mount Doom
 }
@@ -258,6 +330,11 @@ function weWantsIt() {
 
 function thereAndBackAgain() { 
   console.log("13: thereAndBackAgain");
+  document.querySelector('#Mordor').removeChild(document.querySelector('#Mordor #gollum'));
+  document.querySelector('#The-Shire').appendChild(document.querySelector('#Mordor .hobbit'));
+  document.querySelector('#The-Shire').appendChild(document.querySelector('#Mordor .hobbit'));
+  document.querySelector('#The-Shire').appendChild(document.querySelector('#Rivendell .hobbit'));
+  document.querySelector('#The-Shire').appendChild(document.querySelector('#Rivendell .hobbit'));
   // remove `Gollum` and `the Ring` from the document
   // Move all the `hobbits` back to `the shire`
 }
