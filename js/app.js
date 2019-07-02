@@ -229,12 +229,12 @@ function forgeTheFellowShip() {
   //document.querySelector('#Rivendell').appendChild(divNew);
 
   for(let i = 0; i < 4; i++) {
-     //alert(`${document.querySelector('.buddy').innerText} has joined you`);
+     alert(`${document.querySelector('.buddy').innerText} has joined you`);
      divNew.appendChild(document.querySelector('.buddy'));
-     //alert(`${document.querySelector('.hobbit').innerText} has joined you`);
+     alert(`${document.querySelector('.hobbit').innerText} has joined you`);
     divNew.appendChild(document.querySelector('.hobbit'));
   };
-    //alert(`${document.querySelector('.buddy').innerText} has joined you`);
+    alert(`${document.querySelector('.buddy').innerText} has joined you`);
 
     divNew.appendChild(document.querySelector('.buddy'));
   //querySelector()
@@ -273,7 +273,7 @@ function theBalrog() {
 
 function hornOfGondor() { 
   console.log("10: hornOfGondor");
-    //alert("The horn of Gondor has been blown");
+    alert("The horn of Gondor has been blown");
     document.querySelector('.the-fellowship').removeChild(document.querySelector('.the-fellowship').lastChild);
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
